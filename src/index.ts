@@ -102,6 +102,9 @@ export function createConfig(options: { tsconfigRootDir: string }) {
 					},
 				],
 
+					// Enforce Array<T> over T[]
+				'@typescript-eslint/array-type': ['error', { default: 'generic' }],
+
 				'@typescript-eslint/no-explicit-any': 'off',
 
 				// Require braces for all control structures (no single-line if)
