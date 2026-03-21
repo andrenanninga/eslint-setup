@@ -1,0 +1,30 @@
+{
+	"name": "@andrenanninga/eslint-setup",
+	"version": "1.0.0",
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"main": "./dist/index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "bun build ./src/index.ts --outdir ./dist --format esm --target node --external '@eslint/js' --external '@stylistic/eslint-plugin' --external 'eslint-plugin-perfectionist' --external 'typescript-eslint' --external 'eslint'",
+		"prepublishOnly": "bun run build"
+	},
+	"dependencies": {
+		"@eslint/js": "^10.0.1",
+		"@stylistic/eslint-plugin": "^5.10.0",
+		"eslint-plugin-perfectionist": "^5.7.0",
+		"typescript-eslint": "^8.57.1"
+	},
+	"devDependencies": {
+		"bun-types": "latest",
+		"typescript": "~5.9.3"
+	},
+	"peerDependencies": {
+		"eslint": ">=9",
+		"typescript": ">=5"
+	}
+}
