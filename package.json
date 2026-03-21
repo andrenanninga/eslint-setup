@@ -11,6 +11,7 @@
 	],
 	"scripts": {
 		"build": "bun build ./src/index.ts --outdir ./dist --format esm --target node --external '@eslint/js' --external '@stylistic/eslint-plugin' --external 'eslint-plugin-perfectionist' --external 'typescript-eslint' --external 'eslint'",
+		"prepare": "bun run build",
 		"prepublishOnly": "bun run build"
 	},
 	"dependencies": {
