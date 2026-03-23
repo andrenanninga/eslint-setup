@@ -284,6 +284,7 @@ function createConfig(options) {
           allowAllPropertiesOnSameLine: false
         }
       ],
+      "@typescript-eslint/array-type": ["error", { default: "generic" }],
       "@typescript-eslint/no-explicit-any": "off",
       curly: ["error", "all"],
       "id-length": [
@@ -291,6 +292,30 @@ function createConfig(options) {
         {
           exceptions: ["a", "b", "i", "j", "x", "y", "z"],
           min: 2
+        }
+      ],
+      "perfectionist/sort-objects": [
+        "error",
+        {
+          customGroups: [
+            {
+              elementNamePattern: "^_",
+              groupName: "private-variables",
+              selector: "property"
+            },
+            {
+              groupName: "variables",
+              selector: "property"
+            },
+            {
+              groupName: "functions",
+              selector: "method"
+            }
+          ],
+          groups: ["private-variables", "variables", "functions", "unknown"],
+          newlinesBetween: 1,
+          order: "asc",
+          type: "natural"
         }
       ]
     }

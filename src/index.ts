@@ -119,6 +119,32 @@ export function createConfig(options: { tsconfigRootDir: string }) {
 						min: 2,
 					},
 				],
+
+				// Object properties: private variables (_prefix) first, public variables second, functions last
+				'perfectionist/sort-objects': [
+					'error',
+					{
+						customGroups: [
+							{
+								elementNamePattern: '^_',
+								groupName: 'private-variables',
+								selector: 'property',
+							},
+							{
+								groupName: 'variables',
+								selector: 'property',
+							},
+							{
+								groupName: 'functions',
+								selector: 'method',
+							},
+						],
+						groups: ['private-variables', 'variables', 'functions', 'unknown'],
+						newlinesBetween: 1,
+						order: 'asc',
+						type: 'natural',
+					},
+				],
 			},
 		}
 	);
